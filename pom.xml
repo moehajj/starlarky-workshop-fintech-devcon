@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.moehajj</groupId>
+    <artifactId>starlarky-grpc-faas-example</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0</version>
+
+    <properties>
+        <!-- VGS -->
+        <larky.version>0.6.5</larky.version>
+
+        <!-- Spring -->
+        <spring.boot.maven.plugin.version>2.3.12.RELEASE</spring.boot.maven.plugin.version>
+
+        <!-- GRpc -->
+        <grpc.version>1.40.1</grpc.version>
+        <protoc.version>3.17.3</protoc.version>
+        <protoc.gen.grpc.java.version>1.40.1</protoc.gen.grpc.java.version>
+        <protobuf.maven.plugin.version>0.6.1</protobuf.maven.plugin.version>
+
+        <os.maven.plugin.version>1.6.2</os.maven.plugin.version>
+        <maven-compiler.version>3.8.1</maven-compiler.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-bom</artifactId>
+                <version>${grpc.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/verygoodsecurity/starlarky/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.verygood.security</groupId>
+            <artifactId>larky-api</artifactId>
+            <version>${larky.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.lognet</groupId>
+            <artifactId>grpc-spring-boot-starter</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty-shaded</artifactId>
+            <scope>runtime</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-protobuf</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-stub</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.2</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>annotations-api</artifactId>
+            <version>6.0.53</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>${os.maven.plugin.version}</version>
+            </extension>
+        </extensions>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.xolstice.maven.plugins</groupId>
+                    <artifactId>protobuf-maven-plugin</artifactId>
+                    <version>${protobuf.maven.plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring.boot.maven.plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.xolstice.maven.plugins</groupId>
+                <artifactId>protobuf-maven-plugin</artifactId>
+                <configuration>
+                    <protocArtifact>com.google.protobuf:protoc:${protoc.version}:exe:${os.detected.classifier}
+                    </protocArtifact>
+                    <pluginId>grpc-java</pluginId>
+                    <pluginArtifact>
+                        io.grpc:protoc-gen-grpc-java:${protoc.gen.grpc.java.version}:exe:${os.detected.classifier}
+                    </pluginArtifact>
+                    <clearOutputDirectory>false</clearOutputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>compile-custom</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <target>${maven.compiler.target}</target>
+                    <source>${maven.compiler.source}</source>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

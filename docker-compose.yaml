@@ -1,0 +1,18 @@
+version: '3.2'
+
+services:
+  build:
+    image: maven:3.6.3-jdk-11-slim
+    command: mvn clean install -DskipTests
+    working_dir: /app
+    volumes:
+      - .:/app/
+      - ~/.m2/:/root/.m2/
+
+  starlarky-service:
+    build: .
+    image: starlarky-grpc-faas-example:latest
+    ports:
+      - "6565:6565"
+
+

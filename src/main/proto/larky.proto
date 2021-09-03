@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.moehajj.starlarky.example;
+option java_multiple_files = true;
+
+message StarlarkyRequestExample {
+    string script = 1;
+    string input = 2;
+}
+
+message StarlarkyReplyExample {
+    string output = 1;
+}
+
+service StarlarkyServiceExample {
+    rpc Compute (StarlarkyRequestExample) returns (StarlarkyReplyExample) {
+    }
+}
