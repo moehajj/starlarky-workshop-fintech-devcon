@@ -1,4 +1,4 @@
-# starlarky-grpc-faas-example
+# larky-workshop-fintech-devcon
 
 # Setup
 ##Tools Required
