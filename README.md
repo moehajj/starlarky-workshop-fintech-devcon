@@ -1,4 +1,4 @@
-# larky-workshop-fintech-devcon
+# starlarky-workshop-fintech-devcon
 
 # Setup
 ##Tools Required
