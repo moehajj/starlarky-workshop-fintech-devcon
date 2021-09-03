@@ -27,7 +27,7 @@ public class StarlarkyService extends StarlarkyServiceExampleGrpc.StarlarkyServi
         // Create Engine
         final LarkyRuntime engine = new LarkyRuntime();
 
-        // Set script input bindings & context
+        // Create script input bindings & context
 
         try {
             // Invoke Engine to Execute Script
