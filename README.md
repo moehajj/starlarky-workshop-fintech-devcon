@@ -1,8 +1,8 @@
 # starlarky-workshop-fintech-devcon
 
 # Setup
-##Tools Required
-####Server
+## Tools Required
+#### Server
 - Maven & Java 11
     -  Install using `sdkman` 
         ```shell
@@ -18,16 +18,16 @@
 
 - (optional) [Docker](https://docs.docker.com/get-docker/)
 
-####Simple Client
+#### Simple Client
 - [grpcurl](https://github.com/fullstorydev/grpcurl#installation)
 - [yq](https://github.com/fullstorydev/grpcurl#installation)
 
-##Configure Maven
+## Configure Maven
 Configure maven to retrieve Github artifacts using [this guide](https://github.com/verygoodsecurity/starlarky/blob/master/README.md#developer-setup).
 
 # Build & Run
 
-####Using Java
+#### Using Java
 
 ```shell
 mvn clean install -DskipTests
@@ -36,7 +36,7 @@ java \
   -jar ./target/starlarky-grpc-faas-example-1.0.jar
 ```
 
-####Using Docker
+#### Using Docker
 
 ```
 docker-compose run build
