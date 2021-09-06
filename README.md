@@ -33,7 +33,7 @@ Configure maven to retrieve Github artifacts using [this guide](https://github.c
 mvn clean install -DskipTests
 java \
   -Dgrpc.port=6565 \
-  -jar ./target/starlarky-grpc-faas-example-1.0.jar
+  -jar ./target/starlarky-workshop-fintech-devncon-1.0.jar
 ```
 
 #### Using Docker

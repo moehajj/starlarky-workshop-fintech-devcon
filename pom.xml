@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.moehajj</groupId>
-    <artifactId>starlarky-grpc-faas-example</artifactId>
+    <artifactId>starlarky-workshop-fintech-devncon</artifactId>
     <packaging>jar</packaging>
     <version>1.0</version>
 
