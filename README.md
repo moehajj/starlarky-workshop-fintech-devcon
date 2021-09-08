@@ -81,8 +81,8 @@ which means we want the community to freely use, contribute and help build great
   and [docker-compose](https://docs.docker.com/compose/install/)
 
 #### Simple Client
-- [grpcurl](https://github.com/fullstorydev/grpcurl#installation)
-- [yq](https://github.com/fullstorydev/grpcurl#installation)
+- Install [grpcurl](https://github.com/fullstorydev/grpcurl#installation)
+- Install [yq](https://github.com/fullstorydev/grpcurl#installation)
 
 ## Configure Maven
 Configure maven to retrieve Github artifacts using [this guide](https://github.com/verygoodsecurity/starlarky/blob/master/README.md#developer-setup).
