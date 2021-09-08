@@ -3,12 +3,12 @@
 # Agenda
 
 ### A. Build a Starlarky FaaS Server.
-1. Setup your environment.
+1. [Setup your environment](#setup).
 
 2. Complete the [service code](https://github.com/moehajj/starlarky-workshop-fintech-devcon/blob/main/src/main/java/com/moehajj/spring/boot/grpc/example/StarlarkyService.java) 
    to integrate the Starlarky runtime and build your FaaS Server.
 
-3. Build, Test, Iterate.
+3. [Build](#build--run), [Test](#test), Iterate.
 
 4. (extra) Checkout the [different features](https://github.com/verygoodsecurity/starlarky/tree/master/larky/src/main/resources) 
    already available in Starlarky, and try to build your own use-cases!
@@ -36,7 +36,7 @@ You can build a Starlarky module using Java to achieve just that!
    custom.method(arg1, arg2, argName=arg3)
    ...
    ```
-4. Build, Test, Iterate.
+4. [Build](#build--run), [Test](#test), Iterate.
 
 ### C. Contribute to Starlarky!
 Starlarky is open-source, 
@@ -53,11 +53,13 @@ which means we want the community to freely use, contribute and help build great
 4. Contribute a [module](https://github.com/verygoodsecurity/starlarky/tree/master/larky/src/main/java/com/verygood/security/larky/modules) 
    using Java.
    
-5. Build Starlarky, the [Starlarky version](https://github.com/verygoodsecurity/starlarky/blob/master/pom.xml#L9)
+5. [Build](#build--run) Starlarky, the [Starlarky version](https://github.com/verygoodsecurity/starlarky/blob/master/pom.xml#L9)
    is set to `1.0-SNAPSHOT` by default, you can choose to modify that if you like.
    
    Then update the Starlarky version in the [pom.xml](https://github.com/moehajj/starlarky-workshop-fintech-devcon/blob/main/pom.xml#L14) 
    of your FaaS solution to reflect these changes.
+   
+6. [Test](#test), Iterate.
  
 # Setup
 ## Tools Required
