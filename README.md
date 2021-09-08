@@ -77,7 +77,7 @@ which means we want the community to freely use, contribute and help build great
         export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
         ```
 
-- (optional) [Docker](https://docs.docker.com/get-docker/) 
+- (optional) Install [Docker](https://docs.docker.com/get-docker/) 
   and [docker-compose](https://docs.docker.com/compose/install/)
 
 #### Simple Client
