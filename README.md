@@ -12,6 +12,8 @@
 
 4. (extra) Checkout the [different features](https://github.com/verygoodsecurity/starlarky/tree/master/larky/src/main/resources) 
    already available in Starlarky, and try to build your own use-cases!
+   
+Solution: [starlarky-grpc-faas-example](https://github.com/moehajj/starlarky-grpc-faas-example)
 
 ### B. Implement a Custom Module.
 Is there something you can't do with Starlarky? 
