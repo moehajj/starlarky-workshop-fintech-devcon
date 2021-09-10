@@ -128,3 +128,12 @@ Try modifying the code and testing new features!
 ```shell
 ./simple_client.sh
 ```
+
+
+# Resources
+
+- [Starlarky](https://github.com/verygoodsecurity/starlarky)
+- [Java Examples](https://github.com/moehajj/starlarky-java-by-example)
+- [Python Examples](https://github.com/moehajj/starlarky-python-by-example)
+- [GRpc FaaS Example Solution](https://github.com/moehajj/starlarky-grpc-faas-example)
+
